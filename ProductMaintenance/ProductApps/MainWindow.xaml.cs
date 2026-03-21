@@ -47,9 +47,12 @@ namespace ProductApps
 
             product.calTotalPayment();
 
-            totalPaymentTextBlock.Text = (product.TotalPayment - 30).ToString("C");
-            totalChargeTextBlock.Text = (product.TotalPayment - 5).ToString("C");
-            wrapChargeTextBlock.Text = product.TotalPayment.ToString("C");
+            decimal subtotal = product.TotalPayment / 1.10m;
+
+            totalPaymentTextBlock.Text = (subtotal - 30).ToString("C");
+            totalChargeTextBlock.Text = (subtotal - 5).ToString("C");
+            wrapChargeTextBlock.Text = subtotal.ToString("C");
+            gstChargeTextBlock.Text = product.TotalPayment.ToString("C");
 
         }
 

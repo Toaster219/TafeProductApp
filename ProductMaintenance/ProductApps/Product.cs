@@ -66,7 +66,11 @@ namespace ProductApps
             Delivery = 25.0m;
             Wrapping = 5.0m;
 
-            TotalPayment = (Price * Quantity) + Delivery + Wrapping;
+            decimal subtotal = (Price * Quantity) + Delivery + Wrapping;
+
+            GST = subtotal * 0.10m;
+
+            TotalPayment = subtotal + GST;
         }
     }
 }
