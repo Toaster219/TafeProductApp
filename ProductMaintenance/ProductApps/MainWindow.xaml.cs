@@ -39,6 +39,17 @@ namespace ProductApps
             {
                 MessageBox.Show("Enter data again", "Data Entry Error");
             }
+
+            Product product = new Product(
+    Convert.ToDecimal(priceTextBox.Text),
+    Convert.ToInt32(quantityTextBox.Text)
+);
+
+            product.calTotalPayment();
+
+            totalPaymentTextBlock.Text = (product.TotalPayment - 25).ToString("C");
+            totalChargeTextBlock.Text = product.TotalPayment.ToString("C");
+
         }
 
         private void clearButton_Click(object sender, RoutedEventArgs e)
