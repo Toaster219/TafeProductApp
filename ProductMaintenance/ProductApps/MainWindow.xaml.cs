@@ -47,8 +47,9 @@ namespace ProductApps
 
             product.calTotalPayment();
 
-            totalPaymentTextBlock.Text = (product.TotalPayment - 25).ToString("C");
-            totalChargeTextBlock.Text = product.TotalPayment.ToString("C");
+            totalPaymentTextBlock.Text = (product.TotalPayment - 30).ToString("C");
+            totalChargeTextBlock.Text = (product.TotalPayment - 5).ToString("C");
+            wrapChargeTextBlock.Text = product.TotalPayment.ToString("C");
 
         }
 
